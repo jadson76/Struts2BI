@@ -1,0 +1,28 @@
+.divBox{
+	border: 1pt solid #000120;
+	background-image: url('images/hbar.gif');
+	width: 50%;
+	text-align: center;
+	margin: 20px;
+	padding: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	color: white;
+	
+}
+
+ table.blockTable {
+		font-size: 9pt;
+}
+
+ .blockTable TH  {
+	border: 0.5pt solid #000120;
+	font-size: 9pt;
+	background-image: url('images/hbar.gif');
+	color: black;	
+}
+
+ .blockTable TD {
+	border: 0.5pt solid #000120;
+	font-size: 9pt; 
+}
