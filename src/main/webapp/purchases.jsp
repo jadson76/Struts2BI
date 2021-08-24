@@ -13,24 +13,15 @@
 					<th>Item</th>
 					<th>Total</th>
 				</tr>
-				<tr>
-					<td>123456</td>
-					<td>04/10/2021</td>
-					<td>Caneta</td>
-					<td>5000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>04/10/2021</td>
-					<td>Borracha</td>
-					<td>3000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>02/10/2021</td>
-					<td>Caderno</td>
-					<td>8000.00</td>
-				</tr>
+				<s:iterator value="lastMonth">
+					<tr>
+						<td><s:property value="purchaseNumber"/></td>
+						<td><s:date name="date" format="dd/mm/yyyy"/></td>
+						<td><s:property value="item"/></td>
+						<td><s:property value="total"/></td>						
+					</tr>				
+				
+				</s:iterator>
 			
 			</table>
 		</td>
@@ -45,24 +36,15 @@
 					<th>Item</th>
 					<th>Total</th>
 				</tr>
-				<tr>
-					<td>123456</td>
-					<td>04/11/2021</td>
-					<td>Caneta</td>
-					<td>5000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>04/11/2021</td>
-					<td>Borracha</td>
-					<td>3000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>04/11/2021</td>
-					<td>Caderno</td>
-					<td>8000.00</td>
-				</tr>
+				<s:iterator value="actualMonth">
+					<tr>
+						<td><s:property value="purchaseNumber"/></td>
+						<td><s:date name="date" format="dd/mm/yyyy"/></td>
+						<td><s:property value="item"/></td>
+						<td><s:property value="total"/></td>						
+					</tr>				
+				
+				</s:iterator>
 			
 			</table>
 		</td>
@@ -79,24 +61,16 @@
 					<th>Item</th>
 					<th>Total</th>
 				</tr>
-				<tr>
-					<td>123456</td>
-					<td>Janeiro</td>
-					<td>Caneta</td>
-					<td>51000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>Fevereiro</td>
-					<td>Borracha</td>
-					<td>30000.00</td>
-				</tr>
-				<tr>
-					<td>123456</td>
-					<td>Março</td>
-					<td>Caderno</td>
-					<td>80000.00</td>
-				</tr>			
+				<s:iterator value="year">
+					<tr>
+						<td><s:property value="purchaseNumber"/></td>
+						<td><s:date name="date" format="dd/mm/yyyy"/></td>
+						<td><s:property value="item"/></td>
+						<td><s:property value="total"/></td>						
+					</tr>				
+				
+				</s:iterator>
+					
 			</table>
 		</td>		
 	</tr>

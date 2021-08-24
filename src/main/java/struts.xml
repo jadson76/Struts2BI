@@ -7,6 +7,9 @@
 	<include file="struts-default.xml"/>
 	
 	<package name="default" extends="struts-default">
+		<action name="Purchases" class="br.com.jadson.strutsbi.actions.PurchasesAction">
+			<result>purchases.jsp</result>
+		</action>
 	
 	</package>
 	
