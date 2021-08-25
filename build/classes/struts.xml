@@ -10,6 +10,9 @@
 		<action name="Purchases" class="br.com.jadson.strutsbi.actions.PurchasesAction">
 			<result>purchases.jsp</result>
 		</action>
+		<action name="Sales!*" method="{1}" class="br.com.jadson.strutsbi.actions.SalesAction">
+			<result>sales.jsp</result>
+		</action>
 	
 	</package>
 	

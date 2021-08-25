@@ -7,24 +7,22 @@
 				<tr>
 					<th colspan="6" align="center" >HelpSpot Sales - Last 9 Months (Thousand of Dollars)</th>
 				</tr>
+			</table>
+			<table width="400px" cellpadding="0" align="center" >
 				<tr>
-					<th>Outubro</th>
-					<th>Novembro</th>
-					<th>Dezembro</th>
-					<th>Janeiro</th>
-					<th>Fevereiro</th>
-					<th>Março</th>				
-				</tr>
-				<tr>
-					<td>50000</td>
-					<td>70000</td>
-					<td>82000</td>
-					<td>45220</td>
-					<td>18000</td>
-					<td>30000</td>
-				
+					<s:iterator value="salesMap">
+						<td>
+							<table cellpadding="5" align="center"  width="100%" class="blockTable" cellspacing="0">
+								<tr>
+									<th><s:property value="value.month"/></th>
+								</tr>
+								<tr>
+									<th><s:property value="value.total"/></th>
+								</tr>
+							</table>						
+						</td>					
+					</s:iterator>
 				</tr>			
-			
 			</table>
 		</td>
 	</tr>

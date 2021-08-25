@@ -15,11 +15,12 @@
 	<s:tabbedPanel id="Tabs" cssStyle="font-family: Verdana; font-wheght:bold; width: 70%">
 	
 		<s:url id="purchasesUrl" action="Purchases"/>
+		<s:url id="salesUrl" action="Sales!list6monthSales"/>
 	
 		<s:div label="Purchases" theme="ajax" href="%{purchasesUrl}" refreshOnShow="true" executeScripts="true" 
 			cssStyle="display:none; font-weight: normal; padding: 10px; text-align: left; "></s:div>
 			
-		<s:div label="Sales" theme="ajax" href="sales.jsp" refreshOnShow="true" executeScripts="true" 
+		<s:div label="Sales" theme="ajax" href="%{salesUrl}" refreshOnShow="true" executeScripts="true" 
 			cssStyle="display:none; font-weight: normal; padding: 10px; text-align: left; "></s:div>
 	
 	</s:tabbedPanel>
