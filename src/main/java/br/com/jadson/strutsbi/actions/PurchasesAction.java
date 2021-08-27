@@ -1,5 +1,6 @@
 package br.com.jadson.strutsbi.actions;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.com.jadson.strutsbi.DAO.PurchaseDAO;
@@ -34,9 +35,14 @@ public class PurchasesAction {
 	
 	
 	public String execute() {
-		setLastMonth(pDAO.getLastMonthPurchases());
-		setActualMonth(pDAO.getActualMonthPurchases());
-		setYear(pDAO.getYearPurchases());
+		try {
+			setLastMonth(pDAO.getLastMonthPurchases());
+			setActualMonth(pDAO.getActualMonthPurchases());
+			setYear(pDAO.getYearPurchases());
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		
 		return "success";
 	}
 	

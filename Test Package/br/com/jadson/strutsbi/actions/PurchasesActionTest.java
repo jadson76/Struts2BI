@@ -10,9 +10,9 @@ public class PurchasesActionTest {
 	public void testExecute() {
 		PurchasesAction pa = new PurchasesAction();
 		assertEquals("success", pa.execute());
-		assertEquals(3, pa.getLastMonth().size());
-		assertEquals(3, pa.getActualMonth().size());
-		assertEquals(3, pa.getYear().size());
+		assertEquals(2, pa.getLastMonth().size());
+		assertEquals(5, pa.getActualMonth().size());
+		assertEquals(5, pa.getYear().size());
 		
 		
 	}

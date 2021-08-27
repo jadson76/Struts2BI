@@ -1,5 +1,6 @@
 package br.com.jadson.strutsbi.actions;
 
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,11 +26,16 @@ public class SalesAction {
 
 
 	public String list6monthSales() {
-		List<Sales> sales = salesDAO.getLast6MonthSales();
-		salesMap = new LinkedHashMap<String,Sales>();
-		for(Sales s : sales) {
-			salesMap.put(s.getMonth(),s);
-		}
+		List<Sales> sales;
+		try {
+			sales = salesDAO.getLast6MonthSales();
+			salesMap = new LinkedHashMap<String,Sales>();
+			for(Sales s : sales) {
+				salesMap.put(s.getMonth(),s);
+			}
+		} catch (SQLException e) {		
+			e.printStackTrace();
+		}		
 		
 		return "success";
 	}

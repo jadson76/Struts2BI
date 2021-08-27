@@ -10,9 +10,9 @@ public class Purchase {
 	
 	private String item;
 	
-	private String total;
+	private double total;
 
-	public Purchase(String purchaseNumber, Date date, String item, String total) {
+	public Purchase(String purchaseNumber, Date date, String item, double total) {
 		super();
 		this.purchaseNumber = purchaseNumber;
 		this.date = date;
@@ -20,37 +20,45 @@ public class Purchase {
 		this.total = total;
 	}
 
-	public final String getPurchaseNumber() {
+	public Purchase() {
+		super();
+	}
+
+	public String getPurchaseNumber() {
 		return purchaseNumber;
 	}
 
-	public final void setPurchaseNumber(String purchaseNumber) {
+	public void setPurchaseNumber(String purchaseNumber) {
 		this.purchaseNumber = purchaseNumber;
 	}
 
-	public final Date getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public final void setDate(Date date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	public final String getItem() {
+	public String getItem() {
 		return item;
 	}
 
-	public final void setItem(String item) {
+	public void setItem(String item) {
 		this.item = item;
 	}
 
-	public final String getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
-	public final void setTotal(String total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
+
+
+
+	
 	
 	
 

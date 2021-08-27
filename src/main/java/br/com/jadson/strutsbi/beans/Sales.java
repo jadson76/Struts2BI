@@ -4,9 +4,11 @@ public class Sales {
 	
 	private double total;
 	
-	private String month;
-	
-	
+	private String month;	
+
+	public Sales() {
+		super();
+	}
 
 	public Sales(double total, String month) {
 		super();
@@ -14,22 +16,24 @@ public class Sales {
 		this.month = month;
 	}
 
-	public final double getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
-	public final void setTotal(double total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 
-	public final String getMonth() {
+	public String getMonth() {
 		return month;
 	}
 
-	public final void setMonth(String month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
-	
+
+
+
 	
 
 }

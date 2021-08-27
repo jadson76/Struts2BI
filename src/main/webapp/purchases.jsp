@@ -18,7 +18,13 @@
 						<td><s:property value="purchaseNumber"/></td>
 						<td><s:date name="date" format="dd/mm/yyyy"/></td>
 						<td><s:property value="item"/></td>
-						<td><s:property value="total"/></td>						
+						<td>	
+							<s:text name="format.money">
+    							<s:param name="value" value="total"/>
+							</s:text>
+						</td>	
+						
+						
 					</tr>				
 				
 				</s:iterator>
@@ -41,7 +47,9 @@
 						<td><s:property value="purchaseNumber"/></td>
 						<td><s:date name="date" format="dd/mm/yyyy"/></td>
 						<td><s:property value="item"/></td>
-						<td><s:property value="total"/></td>						
+						<s:text name="total"> 
+							<td><s:property value="total"/></td>	
+						</s:text>					
 					</tr>				
 				
 				</s:iterator>
@@ -66,7 +74,9 @@
 						<td><s:property value="purchaseNumber"/></td>
 						<td><s:date name="date" format="dd/mm/yyyy"/></td>
 						<td><s:property value="item"/></td>
-						<td><s:property value="total"/></td>						
+						<s:text name="total"> 
+							<td><s:property value="total"/></td>	
+						</s:text>						
 					</tr>				
 				
 				</s:iterator>
