@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -17,14 +20,18 @@ public class SalesDAO {
 	private static Logger logger = LoggerFactory.getLogger(SalesDAO.class);
 	
 
-	public List<Sales> getLast6MonthSales() throws SQLException {
+	public List<Sales> getLast6MonthSales(String iniDate, String endDate) throws SQLException {
 		List<Sales> lastMonth = new ArrayList<Sales>();				
 		Connection conn = HikariCPDataSource.getConnection();
 		ResultSet rs = null;
 		PreparedStatement pstm = null;
+		//DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
-			pstm = conn.prepareStatement("select * from struts_bi.sales order by id ");
+			pstm = conn.prepareStatement("select * from struts_bi.sales where sales_date between ? and ? order by id ");
+			pstm.setDate(1, new java.sql.Date(fmt.parse(iniDate).getTime()));
+			pstm.setDate(2, new java.sql.Date(fmt.parse(endDate).getTime()));
 			rs = pstm.executeQuery();
 			 while (rs.next()) {
 				 Sales sales = new Sales();

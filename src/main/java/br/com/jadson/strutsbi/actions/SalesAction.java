@@ -1,6 +1,7 @@
 package br.com.jadson.strutsbi.actions;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,8 @@ public class SalesAction {
 	private SalesDAO salesDAO = new SalesDAO();
 	private Map<String,Sales> salesMap;
 	private JFreeChart chart;
+	private String iniDate;
+	private String endDate;
 	
 	
 	public final Map<String, Sales> getSalesMap() {
@@ -35,10 +38,26 @@ public class SalesAction {
 		this.chart = chart;
 	}	
 
+	public String getIniDate() {
+		return iniDate;
+	}
+
+	public void setIniDate(String iniDate) {
+		this.iniDate = iniDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 	public String list6monthSales() {
-		List<Sales> sales;
+		List<Sales> sales = new ArrayList<Sales>();	
 		try {
-			sales = salesDAO.getLast6MonthSales();
+			sales = salesDAO.getLast6MonthSales(iniDate,endDate);
 			salesMap = new LinkedHashMap<String,Sales>();
 			for(Sales s : sales) {
 				salesMap.put(s.getMonth(),s);
@@ -52,7 +71,7 @@ public class SalesAction {
 	
 	public String createChart() {
 		try {
-			chart = new SalesChart().createSalesChart();
+			chart = new SalesChart().createSalesChart(iniDate,endDate);
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}

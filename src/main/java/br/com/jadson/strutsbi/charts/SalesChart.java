@@ -1,6 +1,7 @@
 package br.com.jadson.strutsbi.charts;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jfree.chart.ChartFactory;
@@ -15,10 +16,10 @@ public class SalesChart {
 	
 	SalesDAO sDAO = new SalesDAO();
 	
-	public JFreeChart createSalesChart() throws SQLException {
+	public JFreeChart createSalesChart(String iniDate, String endDate) throws SQLException {
 		
-		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-		List<Sales>sales =  sDAO.getLast6MonthSales();
+		DefaultCategoryDataset dataset = new DefaultCategoryDataset();	
+		List<Sales>sales =  sDAO.getLast6MonthSales(iniDate, endDate);
 		
 		for(Sales s : sales) {
 			dataset.addValue(s.getTotal(),"Sales", s.getMonth());
