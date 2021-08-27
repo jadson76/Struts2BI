@@ -27,8 +27,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
-			<img src="images/6monthsales.jpg"/>
+		<td align="center">
+			<img src="chart.jsp"/>
 		</td>
 	</tr>
 </table>
