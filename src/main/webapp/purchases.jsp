@@ -1,88 +1,46 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<link href="main.css" rel="stylesheet" type="text/css">
-<table border="0" align="center">
-	<tr>
-		<td style="padding-bottom: 10px; padding-right: 20px;">
-			<table cellspacing="0" cellpadding="5" border="1" class="blockTable">
-				<tr>
-					<th colspan="4" align="center">Ultimo Mes</th>
-				</tr>
-				<tr>
-					<th>Num. Pedido</th>
-					<th>Data</th>
-					<th>Item</th>
-					<th>Total</th>
-				</tr>
-				<s:iterator value="lastMonth">
-					<tr>
-						<td><s:property value="purchaseNumber"/></td>
-						<td><s:date name="date" format="dd/mm/yyyy"/></td>
-						<td><s:property value="item"/></td>
-						<td>	
-							<s:text name="format.money">
-    							<s:param name="value" value="total"/>
-							</s:text>
-						</td>	
-						
-						
-					</tr>				
-				
-				</s:iterator>
+<%@ taglib prefix="display" uri="http://displaytag.sf.net" %>
+<div align="center">
+	<div style="width: 85%;">
+		<div align="left" style="display: block; float: left;">
+			<display:table id="lastMonth" name="sessionScope.lastMonthPurchases"
+					class="blockTable" sort="list" requestURI="index.jsp"
+					cellpadding="5" cellspacing="0" uid="item">
+					<display:caption class="caption">Last Month</display:caption>
+					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
+						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+					</display:column>
+					<display:column property="total" title="Total"></display:column>
 			
-			</table>
-		</td>
-		<td style="padding-bottom: 10px;">
-			<table cellspacing="0" cellpadding="5" border="1" class="blockTable">
-				<tr>
-					<th colspan="4" align="center">Mes Atual</th>
-				</tr>
-				<tr>
-					<th>Num. Pedido</th>
-					<th>Data</th>
-					<th>Item</th>
-					<th>Total</th>
-				</tr>
-				<s:iterator value="actualMonth">
-					<tr>
-						<td><s:property value="purchaseNumber"/></td>
-						<td><s:date name="date" format="dd/mm/yyyy"/></td>
-						<td><s:property value="item"/></td>
-						<s:text name="total"> 
-							<td><s:property value="total"/></td>	
-						</s:text>					
-					</tr>				
-				
-				</s:iterator>
+			</display:table>
+		</div>
+		<div align="right">
+			<display:table id="actualMonth" name="sessionScope.actualMonthPurchases"
+					class="blockTable" sort="list" requestURI="index.jsp"
+					cellpadding="5" cellspacing="0" uid="item">
+					<display:caption class="caption">Actual Month</display:caption>
+					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
+						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+					</display:column>
+					<display:column property="total" title="Total"></display:column>			
+			</display:table>
+		
+		</div>
+		<div align="center" style="margin-top: 20px;">
+			<display:table id="year" name="sessionScope.yearPurchases"
+					class="blockTable" sort="list" requestURI="index.jsp"
+					cellpadding="5" cellspacing="0" uid="item">
+					<display:caption class="caption">Year</display:caption>
+					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
+						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+					</display:column>
+					<display:column property="total" title="Total"></display:column>
 			
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<table cellspacing="0" cellpadding="5" border="1" class="blockTable">
-				<tr>
-					<th colspan="4" align="center">Ano</th>
-				</tr>
-				<tr>
-					<th>Num. Pedido</th>
-					<th>Mes</th>
-					<th>Item</th>
-					<th>Total</th>
-				</tr>
-				<s:iterator value="year">
-					<tr>
-						<td><s:property value="purchaseNumber"/></td>
-						<td><s:date name="date" format="dd/mm/yyyy"/></td>
-						<td><s:property value="item"/></td>
-						<s:text name="total"> 
-							<td><s:property value="total"/></td>	
-						</s:text>						
-					</tr>				
-				
-				</s:iterator>
-					
-			</table>
-		</td>		
-	</tr>
+			</display:table>
+		
+		</div>
+	
+	</div>
 
-</table>
+
+</div>

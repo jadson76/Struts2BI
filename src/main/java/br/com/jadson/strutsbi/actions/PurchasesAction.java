@@ -2,6 +2,9 @@ package br.com.jadson.strutsbi.actions;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 
 import br.com.jadson.strutsbi.DAO.PurchaseDAO;
 import br.com.jadson.strutsbi.beans.Purchase;
@@ -34,11 +37,16 @@ public class PurchasesAction {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	public String execute() {
+		Map session = (Map)  ActionContext.getContext().get("session");		
 		try {
 			setLastMonth(pDAO.getLastMonthPurchases());
 			setActualMonth(pDAO.getActualMonthPurchases());
 			setYear(pDAO.getYearPurchases());
+			session.put("lastMonthPurchases",lastMonth);
+			session.put("actualMonthPurchases",actualMonth);
+			session.put("yearPurchases",year);
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}

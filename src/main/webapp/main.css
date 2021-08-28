@@ -12,7 +12,8 @@
 }
 
  table.blockTable {
-		font-size: 9pt;
+	font-size: 9pt;
+	font-family: Verdana;
 }
 
  .blockTable TH  {
@@ -25,4 +26,22 @@
  .blockTable TD {
 	border: 0.5pt solid #000120;
 	font-size: 9pt; 
+}
+
+.sortTitle A {
+	text-decoration: none;
+	font-family: Verdana;
+	font-size: 9pt;
+	color: black;	
+}
+
+.caption {
+	border: 0.5pt solid #000120;
+	font-size: 9pt;
+	background-image: url('images/hbar.gif');
+	text-align: center;
+	padding: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	color: black;
 }

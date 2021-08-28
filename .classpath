@@ -33,5 +33,7 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jcommon-1.0.6.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jfreechart-1.0.3.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/struts2-jfreechart-plugin-2.0.14.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/displaytag-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
