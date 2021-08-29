@@ -8,6 +8,12 @@
 <link href="main.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Struts2 BI</title>
+<script type="text/javascript">
+	function openPopUp(url) {
+		window.open(url,null,"height=200,width=300,status=yes,toolbar=no,menubar=no,location=no");
+	}
+
+</script>
 </head>
 <body>
 <div align="center">

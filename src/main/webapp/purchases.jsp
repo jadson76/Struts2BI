@@ -8,7 +8,9 @@
 					cellpadding="5" cellspacing="0" uid="item">
 					<display:caption class="caption">Last Month</display:caption>
 					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
-						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+						<a href="javascript:openPopUp('itemDetails.jsp?purchaseNumber=${item.purchaseNumber} &date=${item.date} &item=${item.item} &total=${item.total}');">
+							${item.purchaseNumber}
+						</a>
 					</display:column>
 					<display:column property="total" title="Total"></display:column>
 			
@@ -20,7 +22,9 @@
 					cellpadding="5" cellspacing="0" uid="item">
 					<display:caption class="caption">Actual Month</display:caption>
 					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
-						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+						<a href="javascript:openPopUp('itemDetails.jsp?purchaseNumber=${item.purchaseNumber} &date=${item.date} &item=${item.item} &total=${item.total}');">
+							${item.purchaseNumber}
+						</a>
 					</display:column>
 					<display:column property="total" title="Total"></display:column>			
 			</display:table>
@@ -32,7 +36,9 @@
 					cellpadding="5" cellspacing="0" uid="item">
 					<display:caption class="caption">Year</display:caption>
 					<display:column sortProperty="purchaseNumber" title="Order Num" sortable="true" headerClass="sortTitle">
-						<a href="javascript:alert('${item.item }');">${item.purchaseNumber}</a>
+						<a href="javascript:openPopUp('itemDetails.jsp?purchaseNumber=${item.purchaseNumber} &date=${item.date} &item=${item.item} &total=${item.total}');">
+							${item.purchaseNumber}
+						</a>
 					</display:column>
 					<display:column property="total" title="Total"></display:column>
 			
